@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	Diffrence between .each and $.each functions</title>
+	<script src="C:\Users\sanjay\Desktop\jq\jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+// -------------------------------------------------------------------------
+			/*var result='';
+			$('li').each(function(index,element){
+       result +='Index=' + index + ',Value='+$(this).text() +'<br/>';
+			});*/
+// -------------------------------------------------------------------------
+			// var indexArray =[100,200,300,400,500];
+			// var result='';
+			// $.each(indexArray, function(index ,element){
+   //     result +='Index=' + index +',Value='+element +'<br/>';
+			// });
+// --------------------------------------------------------------------
+            var jsObject = {
+            	'USA':'washington D.C',
+            	'India' :'New Delhi',
+            	'UK':'London',
+            	'Australia':'Canberra'
+            };
+            var result='';
+            $.each(jsObject,function(key ,value){
+            result +='key=' + key +',Value=' +value +'<br/>';
+            });
+
+			$('#resultDiv').html(result);
+
+		});
+	</script>
+</head>
+<body>
+<ul>
+<li>India</li>
+<li>Us</li>
+<li>Uk</li>
+<li>Canada</li>
+</ul>
+<div id='resultDiv'></div>
+</body>
+</html>
