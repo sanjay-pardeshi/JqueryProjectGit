@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MultiSelect DropDownList</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#selectdCountries').change(function(){ 
+				var selectedOptions = $('#selectdCountries option:selected');
+				if(selectedOptions.length > 0)
+				{
+					var resultString ='';
+					selectedOptions.each(function(){
+				resultString += "Value =" + $(this).val() +",Text = "+$(this).text()+ "<br/>";
+					});
+				$('#resultDiv').html(resultString);
+			}
+			});
+		});
+	</script>
+
+</head>
+<body style="font-family: Arial">
+<select id="selectdCountries" multiple="multiple">
+	<option value="USA">United State</option>
+	<option value="IND">India</option>
+	<option value="Uk">United Kingdom</option>
+	<option value="AU">Australia</option>
+</select>
+<br/><br/>
+<div id="resultDiv"></div>
+
+</body>
+</html>
